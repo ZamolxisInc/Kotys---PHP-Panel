@@ -14,5 +14,5 @@
     <label for="pwd">Comamnd:</label>
     <input type="user" class="form-control" id="pwd" name="cmd">
   </div>
-  <button type="submit" class="btn btn-default">LogIn</button>
+  <button type="submit" class="btn btn-default">AddCommand</button>
 </form>

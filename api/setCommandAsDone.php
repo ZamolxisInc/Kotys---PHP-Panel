@@ -6,12 +6,12 @@ if ($conn->connect_error)
 {
 	//
 } else {
-	$old = $_GET['t1'];
-	$new = $_GET['t2'];
-	if(!empty($old) && !empty($new))
+	
+	$identity = $_GET['t1'];
+	if(!empty($identity))
 		{
 			
-			$sql = "UPDATE devices SET id='".$new."' WHERE id = '".$old."'";
+			$sql = "UPDATE commands SET done='1' WHERE identity = '".$identity."'";
 			//de adaugat aici INSERT INTO REPORTS that deviID has been changed
 			
 
