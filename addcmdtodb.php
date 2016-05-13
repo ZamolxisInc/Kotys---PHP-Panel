@@ -2,7 +2,8 @@
 <?php include 'header.php'; ?>
 <?php
 $id = $_POST["id"];
-$cmd = $_POST["cmd"];
+$cmd = $_POST["t1"];
+$msg = $_POST["t2"];
 
 if ($conn->connect_error)
 {
@@ -11,7 +12,7 @@ if ($conn->connect_error)
 
 	
 			
-			$sql = "INSERT INTO commands (id, cmd, username, done) VALUES ('".$id."','".$cmd."','websitePanel','0')";
+			$sql = "INSERT INTO commands (id, cmd, username, done) VALUES ('".$id."','".$cmd.$msg."','websitePanel','0')";
 			
 
 			if ($conn->query($sql) === TRUE) { 

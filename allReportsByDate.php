@@ -1,14 +1,5 @@
 <?php include 'header.php'; ?>
-<br>
-<h1>Search by date (dd-mm-yyyy)</h1>
-<form action="allreportsbydate.php" method="get">
-<div class="form-group">
-  <input type="text" class="form-control" id="t1" name="t1">
-</div>
-<input type="submit" value="Search">
-</form>
 
-<h1>All reports</h1>
 <?php
 if ($conn->connect_error)
 {
@@ -16,10 +7,13 @@ if ($conn->connect_error)
 } else {
 
 	
+	$date = $_GET['t1'];
+	if(!empty($date))
+		{
 			
 			
 			
-			$sql = "SELECT * FROM reports ORDER BY date ASC";
+			$sql = "SELECT * FROM reports WHERE date = '".$date."' ORDER BY time DESC";
 			$result = $conn->query($sql);
 
 			if ($result->num_rows > 0) 
@@ -51,7 +45,7 @@ if ($conn->connect_error)
 			}
 			$conn->close();
 			
-		
+		}
 			
 		
 

@@ -25,16 +25,24 @@ if ($conn->connect_error)
 		<th>Username</th>
         <th>Active</th>
 		<th>IP</th>
-		<th>ActiveWindows</th>
+		<th>ActiveWindow</th>
 		<th>LastSeen</th>
-		<th>CMD</th>
+		<th>More</th>
+		<th>Activator</th>
 	
       </tr>
     </thead>
     <tbody>';
 				// output data of each row
 				while($row = $result->fetch_assoc()) {
-					echo '<tr><td>'.$row["id"].'</td><td>'.$row["type"].'</td><td>'.$row["name"].'</td><td>'.$row["username"].'</td><td>'.$row["active"].'</td><td>'.$row["ip"].'</td><td>'.$row["activewindows"].'</td><td>'.$row["lastseen"].'</td><td><a href="cmd.php?id='.$row["id"].'">Select</a></td></tr>';
+					$active = "No";
+					$activity = "Activate";
+					if($row["active"] == "1")
+					{
+						$active = "Yes";
+						$activity = "Deactivate";
+					}
+					echo '<tr><td>'.$row["id"].'</td><td>'.$row["type"].'</td><td>'.$row["name"].'</td><td>'.$row["username"].'</td><td>'.$active.'</td><td>'.$row["ip"].'</td><td>'.$row["activewindow"].'</td><td>'.$row["lastseen"].'</td><td><a href="cmd.php?id='.$row["id"].'&type='.$row["type"].'">Select</a></td><td><a href="devicesetactive.php?t1='.$row["id"].'&t2='.$row["active"].'">'.$activity.'</td></a></tr>';
 				
 				
 				}

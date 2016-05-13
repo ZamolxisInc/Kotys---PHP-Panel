@@ -55,7 +55,7 @@ WHERE singlereports.repId = '".$id."'";
   </table>';
 			}
 			else {
-				echo "<h2>No reports</h2>";
+				echo "<h2>No additional data</h2>";
 			}
 			$conn->close();
 			
